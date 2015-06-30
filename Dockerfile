@@ -17,7 +17,6 @@ ADD . /app
 WORKDIR /app
 RUN npm install
 ENV NODE_ENV production
-RUN grunt process && grunt uglify
 VOLUME /data/db/pathhero
 CMD mongod --fork --dbpath /data/db/pathhero --logpath /var/log/mongod.log \
     && grunt deploy

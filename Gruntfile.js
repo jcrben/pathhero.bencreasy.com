@@ -207,11 +207,10 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('process', 'preprocess');
   grunt.registerTask('test', 'mochaTest:test');
   grunt.registerTask('check', ['jshint', 'mochaTest:test', 'coverage']);
   grunt.registerTask('coverage', ['env:coverage', 'instrument', 'mochaTest:cov',
     'storeCoverage', 'makeReport']);
   grunt.registerTask('default', ['concurrent']);
-  grunt.registerTask('deploy', ['react', 'browserify', 'nodemon']);
+  grunt.registerTask('deploy', ['preprocess', 'react', 'browserify', 'uglify', 'nodemon']);
 };
