@@ -1,0 +1,188 @@
+
+/* PLAY STYLES TOC 
+1. PLAY WELCOME SCREEN
+2. PLAYER CONTAINER
+*/
+
+///////// PLAY WELCOME SCREEN //////////////////////////////
+
+#welcome-msg-container {
+  background: url(../static/golden-gate-bridge.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  padding-top: 120px;
+
+
+  #welcome-text {
+    background-color: rgba(0,0,0,0.45);
+    text-align: center; 
+    padding: 10px 20px 40px; 
+    
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      font-family: 'Ubuntu', arial;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    #hunt-name {
+      margin-bottom: 20px;
+    }
+    
+    #start-btn {
+      .btn {
+        background-color: #ffa600;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        font-size: 1.5em;
+        font-weight: bold;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+///////// PLAY  //////////////////////////////
+
+#player-container {
+    margin-bottom: 50px;
+    #gMap {
+    width: 100%;    
+  }  
+}
+
+#player-container {
+  padding: 0;
+}
+
+.navbar-brand{
+  font-weight: 500;
+}
+
+#player-body {
+  background: url(../static/golden-gate-brdige-blurred2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: auto;  
+}
+
+#playerContainer {
+  padding: 0 10px;
+
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 10px;
+    color: $red-orange;
+    margin-bottom: -7px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    color: $red-orange;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .current-clue-txt, 
+  ul,
+  section,
+  #huntSummaryContainer p {
+    font-size: 1.2em;
+  } 
+
+  ul {
+    margin-top: 8px;
+  }
+
+  .section {
+    p {
+      margin-top: 10px;
+    }
+  }
+
+
+  .btn {
+    background-color: #ffa600;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px 12px 6px;
+    
+    a {
+      color: #fff;
+      font-size: 0.8em;
+    }
+  }
+
+  hr {
+    border-top: 1px solid #B59191;
+  }
+  
+  #clue-container {
+    padding-bottom: 60px;
+  }
+
+  .clue-num-container {
+    margin-bottom: 10px;
+    position: relative;
+    
+    .next-prev-link-container {
+      position: absolute;
+      top: -12px;
+      right: 4px;
+
+      a {
+        margin: 6px;
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 2px 6px 2px;
+      }
+
+      .no-prev-clue, 
+      .no-next-clue {
+        color: #818181;
+        text-decoration: none;
+        pointer-events: none;
+        background-color: #ccc;
+      }
+      
+      .has-prev-clue, 
+      .has-next-clue {
+        pointer-events: auto;
+      }
+
+      .current-clue-txt {
+        display: block;
+      }
+    }
+  }
+
+  #progress-bar {
+    height: 30px;
+  }
+
+  h2:first-child {
+    display: inline; 
+  } 
+
+}

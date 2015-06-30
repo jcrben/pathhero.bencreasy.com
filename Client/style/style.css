@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
 html {
   font-family: sans-serif;
@@ -89,7 +89,6 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -149,8 +148,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -1205,31 +1202,36 @@ mark,
 .text-primary {
   color: #337ab7; }
 
-a.text-primary:hover {
+a.text-primary:hover,
+a.text-primary:focus {
   color: #286090; }
 
 .text-success {
   color: #3c763d; }
 
-a.text-success:hover {
+a.text-success:hover,
+a.text-success:focus {
   color: #2b542c; }
 
 .text-info {
   color: #31708f; }
 
-a.text-info:hover {
+a.text-info:hover,
+a.text-info:focus {
   color: #245269; }
 
 .text-warning {
   color: #8a6d3b; }
 
-a.text-warning:hover {
+a.text-warning:hover,
+a.text-warning:focus {
   color: #66512c; }
 
 .text-danger {
   color: #a94442; }
 
-a.text-danger:hover {
+a.text-danger:hover,
+a.text-danger:focus {
   color: #843534; }
 
 .bg-primary {
@@ -1238,31 +1240,36 @@ a.text-danger:hover {
 .bg-primary {
   background-color: #337ab7; }
 
-a.bg-primary:hover {
+a.bg-primary:hover,
+a.bg-primary:focus {
   background-color: #286090; }
 
 .bg-success {
   background-color: #dff0d8; }
 
-a.bg-success:hover {
+a.bg-success:hover,
+a.bg-success:focus {
   background-color: #c1e2b3; }
 
 .bg-info {
   background-color: #d9edf7; }
 
-a.bg-info:hover {
+a.bg-info:hover,
+a.bg-info:focus {
   background-color: #afd9ee; }
 
 .bg-warning {
   background-color: #fcf8e3; }
 
-a.bg-warning:hover {
+a.bg-warning:hover,
+a.bg-warning:focus {
   background-color: #f7ecb5; }
 
 .bg-danger {
   background-color: #f2dede; }
 
-a.bg-danger:hover {
+a.bg-danger:hover,
+a.bg-danger:focus {
   background-color: #e4b9b9; }
 
 .page-header {
@@ -2201,27 +2208,27 @@ input[type="search"] {
   -webkit-appearance: none; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"],
-  input[type="time"],
-  input[type="datetime-local"],
-  input[type="month"] {
+  input[type="date"].form-control,
+  input[type="time"].form-control,
+  input[type="datetime-local"].form-control,
+  input[type="month"].form-control {
     line-height: 34px; }
-    input[type="date"].input-sm, .input-group-sm input[type="date"],
-    input[type="time"].input-sm, .input-group-sm
-    input[type="time"],
-    input[type="datetime-local"].input-sm, .input-group-sm
-    input[type="datetime-local"],
-    input[type="month"].input-sm, .input-group-sm
-    input[type="month"] {
-      line-height: 30px; }
-    input[type="date"].input-lg, .input-group-lg input[type="date"],
-    input[type="time"].input-lg, .input-group-lg
-    input[type="time"],
-    input[type="datetime-local"].input-lg, .input-group-lg
-    input[type="datetime-local"],
-    input[type="month"].input-lg, .input-group-lg
-    input[type="month"] {
-      line-height: 46px; } }
+  input[type="date"].input-sm, .input-group-sm input[type="date"],
+  input[type="time"].input-sm, .input-group-sm
+  input[type="time"],
+  input[type="datetime-local"].input-sm, .input-group-sm
+  input[type="datetime-local"],
+  input[type="month"].input-sm, .input-group-sm
+  input[type="month"] {
+    line-height: 30px; }
+  input[type="date"].input-lg, .input-group-lg input[type="date"],
+  input[type="time"].input-lg, .input-group-lg
+  input[type="time"],
+  input[type="datetime-local"].input-lg, .input-group-lg
+  input[type="datetime-local"],
+  input[type="month"].input-lg, .input-group-lg
+  input[type="month"] {
+    line-height: 46px; } }
 .form-group {
   margin-bottom: 15px; }
 
@@ -2320,10 +2327,10 @@ select[multiple].input-sm {
   height: auto; }
 .form-group-sm .form-control-static {
   height: 30px;
-  padding: 5px 10px;
+  min-height: 32px;
+  padding: 6px 10px;
   font-size: 12px;
-  line-height: 1.5;
-  min-height: 32px; }
+  line-height: 1.5; }
 
 .input-lg {
   height: 46px;
@@ -2354,10 +2361,10 @@ select[multiple].input-lg {
   height: auto; }
 .form-group-lg .form-control-static {
   height: 46px;
-  padding: 10px 16px;
+  min-height: 38px;
+  padding: 11px 16px;
   font-size: 18px;
-  line-height: 1.33333;
-  min-height: 38px; }
+  line-height: 1.33333; }
 
 .has-feedback {
   position: relative; }
@@ -2376,12 +2383,16 @@ select[multiple].input-lg {
   text-align: center;
   pointer-events: none; }
 
-.input-lg + .form-control-feedback {
+.input-lg + .form-control-feedback,
+.input-group-lg + .form-control-feedback,
+.form-group-lg .form-control + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px; }
 
-.input-sm + .form-control-feedback {
+.input-sm + .form-control-feedback,
+.input-group-sm + .form-control-feedback,
+.form-group-sm .form-control + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px; }
@@ -2529,10 +2540,12 @@ select[multiple].input-lg {
   right: 15px; }
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 14.33333px; } }
+    padding-top: 14.33333px;
+    font-size: 18px; } }
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
-    padding-top: 6px; } }
+    padding-top: 6px;
+    font-size: 12px; } }
 
 .btn {
   display: inline-block;
@@ -2567,20 +2580,34 @@ select[multiple].input-lg {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
   .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
     cursor: not-allowed;
-    pointer-events: none;
     opacity: 0.65;
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none; }
 
+a.btn.disabled, fieldset[disabled] a.btn {
+  pointer-events: none; }
+
 .btn-default {
   color: #333;
   background-color: #fff;
   border-color: #ccc; }
-  .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+  .btn-default:focus, .btn-default.focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c; }
+  .btn-default:hover {
     color: #333;
     background-color: #e6e6e6;
     border-color: #adadad; }
+  .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad; }
+    .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus {
+      color: #333;
+      background-color: #d4d4d4;
+      border-color: #8c8c8c; }
   .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
     background-image: none; }
   .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
@@ -2594,10 +2621,22 @@ select[multiple].input-lg {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  .btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #286090;
+    border-color: #122b40; }
+  .btn-primary:hover {
     color: #fff;
     background-color: #286090;
     border-color: #204d74; }
+  .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74; }
+    .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #204d74;
+      border-color: #122b40; }
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
@@ -2611,10 +2650,22 @@ select[multiple].input-lg {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c; }
-  .btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+  .btn-success:focus, .btn-success.focus {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #255625; }
+  .btn-success:hover {
     color: #fff;
     background-color: #449d44;
     border-color: #398439; }
+  .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439; }
+    .btn-success:active:hover, .btn-success:active:focus, .btn-success:active.focus, .btn-success.active:hover, .btn-success.active:focus, .btn-success.active.focus, .open > .btn-success.dropdown-toggle:hover, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #398439;
+      border-color: #255625; }
   .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
     background-image: none; }
   .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
@@ -2628,10 +2679,22 @@ select[multiple].input-lg {
   color: #fff;
   background-color: #5bc0de;
   border-color: #46b8da; }
-  .btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
+  .btn-info:focus, .btn-info.focus {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #1b6d85; }
+  .btn-info:hover {
     color: #fff;
     background-color: #31b0d5;
     border-color: #269abc; }
+  .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc; }
+    .btn-info:active:hover, .btn-info:active:focus, .btn-info:active.focus, .btn-info.active:hover, .btn-info.active:focus, .btn-info.active.focus, .open > .btn-info.dropdown-toggle:hover, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #269abc;
+      border-color: #1b6d85; }
   .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
     background-image: none; }
   .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
@@ -2645,10 +2708,22 @@ select[multiple].input-lg {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236; }
-  .btn-warning:hover, .btn-warning:focus, .btn-warning.focus, .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
+  .btn-warning:focus, .btn-warning.focus {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #985f0d; }
+  .btn-warning:hover {
     color: #fff;
     background-color: #ec971f;
     border-color: #d58512; }
+  .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512; }
+    .btn-warning:active:hover, .btn-warning:active:focus, .btn-warning:active.focus, .btn-warning.active:hover, .btn-warning.active:focus, .btn-warning.active.focus, .open > .btn-warning.dropdown-toggle:hover, .open > .btn-warning.dropdown-toggle:focus, .open > .btn-warning.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #d58512;
+      border-color: #985f0d; }
   .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
     background-image: none; }
   .btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled.focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled].focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning.focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
@@ -2662,10 +2737,22 @@ select[multiple].input-lg {
   color: #fff;
   background-color: #d9534f;
   border-color: #d43f3a; }
-  .btn-danger:hover, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
+  .btn-danger:focus, .btn-danger.focus {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #761c19; }
+  .btn-danger:hover {
     color: #fff;
     background-color: #c9302c;
     border-color: #ac2925; }
+  .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925; }
+    .btn-danger:active:hover, .btn-danger:active:focus, .btn-danger:active.focus, .btn-danger.active:hover, .btn-danger.active:focus, .btn-danger.active.focus, .open > .btn-danger.dropdown-toggle:hover, .open > .btn-danger.dropdown-toggle:focus, .open > .btn-danger.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #ac2925;
+      border-color: #761c19; }
   .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
     background-image: none; }
   .btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled.focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled].focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger.focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
@@ -2760,6 +2847,7 @@ tbody.collapse.in {
   margin-left: 2px;
   vertical-align: middle;
   border-top: 4px dashed;
+  border-top: 4px solid \9;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent; }
 
@@ -2863,7 +2951,8 @@ tbody.collapse.in {
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0;
-  border-bottom: 4px solid;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
   content: ""; }
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
@@ -3565,6 +3654,9 @@ a.label:hover, a.label:focus {
     border-bottom: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px; }
+.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; }
 
 .panel-heading + .list-group .list-group-item:first-child {
   border-top-width: 0; }
@@ -3845,6 +3937,172 @@ button.close {
   border: 0;
   -webkit-appearance: none; }
 
+/* Additional partials defined below under global variables */
+/* PLAY STYLES TOC 
+1. PLAY WELCOME SCREEN
+2. PLAYER CONTAINER
+*/
+#welcome-msg-container {
+  background: url(../static/golden-gate-bridge.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 120px; }
+  #welcome-msg-container #welcome-text {
+    background-color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    padding: 10px 20px 40px; }
+    #welcome-msg-container #welcome-text h2 {
+      font-size: 2em;
+      color: #fff;
+      font-family: 'Ubuntu', arial;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      font-weight: 400; }
+    #welcome-msg-container #welcome-text #hunt-name {
+      margin-bottom: 20px; }
+    #welcome-msg-container #welcome-text #start-btn .btn {
+      background-color: #ffa600;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+      font-size: 1.5em;
+      font-weight: bold; }
+      #welcome-msg-container #welcome-text #start-btn .btn a {
+        color: #fff; }
+
+#player-container {
+  margin-bottom: 50px; }
+  #player-container #gMap {
+    width: 100%; }
+
+#player-container {
+  padding: 0; }
+
+.navbar-brand {
+  font-weight: 500; }
+
+#player-body {
+  background: url(../static/golden-gate-brdige-blurred2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: auto; }
+
+#playerContainer {
+  padding: 0 10px; }
+  #playerContainer h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 10px;
+    color: #D53D06;
+    margin-bottom: -7px; }
+  #playerContainer h2 {
+    font-size: 1.3em;
+    color: #D53D06;
+    font-weight: 500;
+    margin-bottom: 20px; }
+  #playerContainer .current-clue-txt,
+  #playerContainer ul,
+  #playerContainer section,
+  #playerContainer #huntSummaryContainer p {
+    font-size: 1.2em; }
+  #playerContainer ul {
+    margin-top: 8px; }
+  #playerContainer .section p {
+    margin-top: 10px; }
+  #playerContainer .btn {
+    background-color: #ffa600;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px 12px 6px; }
+    #playerContainer .btn a {
+      color: #fff;
+      font-size: 0.8em; }
+  #playerContainer hr {
+    border-top: 1px solid #B59191; }
+  #playerContainer #clue-container {
+    padding-bottom: 60px; }
+  #playerContainer .clue-num-container {
+    margin-bottom: 10px;
+    position: relative; }
+    #playerContainer .clue-num-container .next-prev-link-container {
+      position: absolute;
+      top: -12px;
+      right: 4px; }
+      #playerContainer .clue-num-container .next-prev-link-container a {
+        margin: 6px;
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 2px 6px 2px; }
+      #playerContainer .clue-num-container .next-prev-link-container .no-prev-clue,
+      #playerContainer .clue-num-container .next-prev-link-container .no-next-clue {
+        color: #818181;
+        text-decoration: none;
+        pointer-events: none;
+        background-color: #ccc; }
+      #playerContainer .clue-num-container .next-prev-link-container .has-prev-clue,
+      #playerContainer .clue-num-container .next-prev-link-container .has-next-clue {
+        pointer-events: auto; }
+      #playerContainer .clue-num-container .next-prev-link-container .current-clue-txt {
+        display: block; }
+  #playerContainer #progress-bar {
+    height: 30px; }
+  #playerContainer h2:first-child {
+    display: inline; }
+
+.gMapInactiveButton {
+  background: rgba(70, 70, 70, 0.5);
+  width: 35px;
+  height: 35px;
+  margin-bottom: 22px;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: 'pointer';
+  display: none; }
+
+.gMapInactiveButton:hover {
+  background: rgba(33, 33, 33, 0.6); }
+
+.gMapActiveButton {
+  background: rgba(33, 33, 33, 0.9);
+  width: 35px;
+  height: 35px;
+  margin-bottom: 22px;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  border-radius: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: 'pointer'; }
+
+.gMapText {
+  color: white;
+  font-family: 'Roboto Arial,sans-serif';
+  font-size: 16px;
+  line-height: 38px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px; }
+
 html body {
   font-family: 'Ubuntu', sans-serif; }
 
@@ -4058,55 +4316,6 @@ h2 {
 .account {
   margin-top: 60px; }
 
-#player-container {
-  margin-bottom: 50px; }
-  #player-container #gMap {
-    width: 100%; }
-
-.gMapInactiveButton {
-  background: rgba(70, 70, 70, 0.5);
-  width: 35px;
-  height: 35px;
-  margin-bottom: 22px;
-  margin-left: 10px;
-  text-align: center;
-  margin-top: 10px;
-  border: 2px solid #fff;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  border-radius: 200px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  cursor: 'pointer';
-  display: none; }
-
-.gMapInactiveButton:hover {
-  background: rgba(33, 33, 33, 0.6); }
-
-.gMapActiveButton {
-  background: rgba(33, 33, 33, 0.9);
-  width: 35px;
-  height: 35px;
-  margin-bottom: 22px;
-  margin-left: 10px;
-  text-align: center;
-  margin-top: 10px;
-  border: 2px solid #fff;
-  border-radius: 200px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  cursor: 'pointer'; }
-
-.gMapText {
-  color: white;
-  font-family: 'Roboto Arial,sans-serif';
-  font-size: 16px;
-  line-height: 38px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px; }
-
-#player-container {
-  padding: 0; }
-
 #bottomNav {
   position: fixed;
   bottom: 0px;
@@ -4177,118 +4386,6 @@ h2 {
   background-color: gray;
   transform: translate(0px, -125px); }
 
-#welcome-msg-container {
-  background: url(../static/golden-gate-bridge.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 120px; }
-  #welcome-msg-container #welcome-text {
-    background-color: rgba(0, 0, 0, 0.45);
-    text-align: center;
-    padding: 10px 20px 40px; }
-    #welcome-msg-container #welcome-text h2 {
-      font-size: 2em;
-      color: #fff;
-      font-family: 'Ubuntu', arial;
-      line-height: 1.4;
-      margin-bottom: 20px;
-      font-weight: 400; }
-    #welcome-msg-container #welcome-text #hunt-name {
-      margin-bottom: 20px; }
-    #welcome-msg-container #welcome-text #start-btn .btn {
-      background-color: #ffa600;
-      -webkit-border-radius: 1px;
-      -moz-border-radius: 1px;
-      border-radius: 1px;
-      font-size: 1.5em;
-      font-weight: bold; }
-      #welcome-msg-container #welcome-text #start-btn .btn a {
-        color: #fff; }
-
-.navbar-brand {
-  font-weight: 500; }
-
-#player-body {
-  background: url(../static/golden-gate-brdige-blurred2.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: auto; }
-
-#playerContainer {
-  padding: 0 10px; }
-  #playerContainer h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    margin-top: 0;
-    padding-top: 10px;
-    color: #D53D06;
-    margin-bottom: -7px; }
-  #playerContainer h2 {
-    font-size: 1.3em;
-    color: #D53D06;
-    font-weight: 500;
-    margin-bottom: 20px; }
-  #playerContainer .current-clue-txt,
-  #playerContainer ul,
-  #playerContainer section,
-  #playerContainer #huntSummaryContainer p {
-    font-size: 1.2em; }
-  #playerContainer ul {
-    margin-top: 8px; }
-  #playerContainer .section p {
-    margin-top: 10px; }
-  #playerContainer .btn {
-    background-color: #ffa600;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding: 2px 12px 6px; }
-    #playerContainer .btn a {
-      color: #fff;
-      font-size: 0.8em; }
-  #playerContainer hr {
-    border-top: 1px solid #B59191; }
-  #playerContainer #clue-container {
-    padding-bottom: 60px; }
-  #playerContainer .clue-num-container {
-    margin-bottom: 10px;
-    position: relative; }
-    #playerContainer .clue-num-container .next-prev-link-container {
-      position: absolute;
-      top: -12px;
-      right: 4px; }
-      #playerContainer .clue-num-container .next-prev-link-container a {
-        margin: 6px;
-        color: #fff;
-        font-size: 1.2em;
-        font-weight: 500;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 2px 6px 2px; }
-      #playerContainer .clue-num-container .next-prev-link-container .no-prev-clue,
-      #playerContainer .clue-num-container .next-prev-link-container .no-next-clue {
-        color: #818181;
-        text-decoration: none;
-        pointer-events: none;
-        background-color: #ccc; }
-      #playerContainer .clue-num-container .next-prev-link-container .has-prev-clue,
-      #playerContainer .clue-num-container .next-prev-link-container .has-next-clue {
-        pointer-events: auto; }
-      #playerContainer .clue-num-container .next-prev-link-container .current-clue-txt {
-        display: block; }
-  #playerContainer #progress-bar {
-    height: 30px; }
-  #playerContainer h2:first-child {
-    display: inline; }
-
 #homepage-body {
   background: url(../static/homepage-cropped.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -4322,7 +4419,7 @@ h2 {
 #homepage-container #action-btns {
   display: inline;
   float: right;
-  margin-top: 26px; }
+  margin-top: -10px; }
   #homepage-container #action-btns a {
     color: #fff; }
   #homepage-container #action-btns a:hover {

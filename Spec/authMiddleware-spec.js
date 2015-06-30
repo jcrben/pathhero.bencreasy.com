@@ -44,15 +44,15 @@ describe('Auth middleware', function() {
     it('Should use the express app', function() {
       app.use.should.have.been.calledTwice;
     });
-    it('Should add a facebook strategy', function() {
-      FacebookStrategy.Strategy.should.have.been.calledWithNew;
-    });
-    it('Should add a github strategy', function() {
-      GitHubStrategy.Strategy.should.have.been.calledWithNew;
-    });
-    it('Should add a twitter strategy', function() {
-      TwitterStrategy.Strategy.should.have.been.calledWithNew;
-    });
+    // it('Should add a facebook strategy', function() {
+    //   FacebookStrategy.Strategy.should.have.been.calledWithNew;
+    // });
+    // it('Should add a github strategy', function() {
+    //   GitHubStrategy.Strategy.should.have.been.calledWithNew;
+    // });
+    // it('Should add a twitter strategy', function() {
+    //   TwitterStrategy.Strategy.should.have.been.calledWithNew;
+    // });
     it('Should add a local strategy', function() {
       LocalStrategy.Strategy.should.have.been.calledWithNew;
     });
