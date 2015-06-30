@@ -27,10 +27,12 @@ catch(err) {
 // };
 var sessionKey = secrets.sessionKey || process.env.SESSION_KEY;
 console.log('fresh session key is:', sessionKey);
+var stagePath = process.env.STAGING ? '-stage' : '';
+
 if (process.env.NODE_ENV === 'production') {
   var domain = 'bencreasy.com';
-  var createSubdomain = 'create.pathhero';
-  var playSubdomain = 'play.pathhero';
+  var createSubdomain = 'create.pathhero'+stagePath;
+  var playSubdomain = 'play.pathhero'+stagePath;
 } else {
   var domain = 'wettowelreactor.com'
   var createSubdomain = 'create';

@@ -1,1 +1,1 @@
--v /data/db/pathhero:/data/db/pathhero
+-v /data/db/stage-pathhero:/data/db/stage-pathhero
