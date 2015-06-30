@@ -11,7 +11,7 @@ RUN apt-get update -y \
     && apt-get install -y npm mongodb mongodb-clients \
     && npm install -g nodemon react-tools browserify grunt-cli mocha istanbul \
     && apt-get install ruby -y && gem install sass \
-    && mkdir -p /data/db/pathhero-stage \
+    && mkdir -p /data/db/pathhero \
     && mkdir /app
 
 ADD . /app
@@ -19,6 +19,6 @@ WORKDIR /app
 RUN npm install
 ENV NODE_ENV production
 VOLUME /data/db/pathhero-stage
-CMD mongod --fork --dbpath /data/db/pathhero-stage \
+CMD mongod --fork --dbpath /data/db/pathhero \
            --logpath /var/log/mongod.log \
            && grunt deploy
