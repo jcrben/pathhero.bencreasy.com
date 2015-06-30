@@ -90,15 +90,19 @@ h2 {
     text-transform: uppercase;
   }
 
-  #map-container {
+  #map-container{
     position: fixed;
     width: 100%;
     padding: 0;
-
   }
+
   #gMap {
     width: 50%;
   }    
+
+  #map-container img {
+    max-width: none;
+  }
 
   .fa-remove {
     font-size: x-large;

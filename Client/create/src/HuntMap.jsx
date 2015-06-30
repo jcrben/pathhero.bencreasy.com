@@ -14,7 +14,7 @@ module.exports = React.createClass({
     };
   },
   componentDidMount: function() {
-    gMap.startGMap({lng: -33.73, lat: 149.02});
+    gMap.startGMap({lng: -122, lat: 38});
     gMap.getGeolocation(gMap.setCenter);
   },
   render: function() {

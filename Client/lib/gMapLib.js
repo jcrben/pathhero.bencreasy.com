@@ -46,11 +46,14 @@ gMap.startGMap = function (pos){
   //----------------------------------
   var mapOptions = {
     center: pos,
-    zoom: 12,
+    zoom: 11,
     backgroundColor: '#568',
     disableDoubleClickZoom : true,
     disableDefaultUI: true,
-    keyboardShortcuts: false
+    keyboardShortcuts: false,
+    zoomControl: true,
+    zoomControlOptions: google.maps.ZoomControlStyle.LARGE,
+    position: google.maps.ControlPosition.BOTTOM_CENTER
   };
   gMap.map = new google.maps.Map(document.getElementById('gMap'),mapOptions);
   
@@ -283,13 +286,19 @@ gMap.emptyMarkers = function (){
 };
 
 gMap.getGeolocation = function (callback){
+  // TODO: figure out why the navigator is returning 0, 0 for lat & long
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
-      pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      var latitude = position.coords.latitude || 37.7577;
+      var longitude = position.coords.longitude || -122.4376;
+      
+      pos = new google.maps.LatLng(latitude, longitude);
+      console.log('getGeolocation & pos is:', pos);
       callback(pos);
     });
-  }else{
-    var pos = new google.maps.LatLng(-33.73, 149.02);
+  } else {
+    var pos = new google.maps.LatLng(37.7577, -122.4376);
+    console.log('getGeolocation navigator unavilable & pos is', pos);
     callback(pos);
   }
 };

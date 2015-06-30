@@ -4140,6 +4140,8 @@ h2 {
   padding: 0; }
 #app-container #gMap {
   width: 50%; }
+#app-container #map-container img {
+  max-width: none; }
 #app-container .fa-remove {
   font-size: x-large;
   position: relative;
