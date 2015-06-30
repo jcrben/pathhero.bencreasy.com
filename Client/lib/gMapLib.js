@@ -52,8 +52,10 @@ gMap.startGMap = function (pos){
     disableDefaultUI: true,
     keyboardShortcuts: false,
     zoomControl: true,
-    zoomControlOptions: google.maps.ZoomControlStyle.LARGE,
-    position: google.maps.ControlPosition.BOTTOM_CENTER
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.DEFAULT,
+      position: google.maps.ControlPosition.BOTTOM_LEFT
+    }
   };
   gMap.map = new google.maps.Map(document.getElementById('gMap'),mapOptions);
   
@@ -287,6 +289,7 @@ gMap.emptyMarkers = function (){
 
 gMap.getGeolocation = function (callback){
   // TODO: figure out why the navigator is returning 0, 0 for lat & long
+  // Pretty sure the above problem was due to emulating geolocation in DevTools!
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       var latitude = position.coords.latitude || 37.7577;
