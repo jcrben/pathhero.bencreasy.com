@@ -32,7 +32,7 @@ db
 
 # Platform files
 .DS_Store
-*.sublime-project
+#*.sublime-project
 *.sublime-workspace
 
 Server/util/secrets.js

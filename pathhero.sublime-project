@@ -1,0 +1,31 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+      "folder_exclude_patterns": [
+      ".sass-cache", 
+      "coverage"
+      ],
+      "file_exclude_patterns": [
+          ".gitattributes", 
+          ".bowerrc", 
+          "PRESS-RELEASE.md",
+          "README.md",
+          "STYLE-GUIDE.md",
+          "CONTRIBUTING.md",
+          ".deployment",
+          "deploy.sh",
+          "IISNode.yml",
+          "testPathHelper.js"
+      ],
+      "name": "Path Hero"
+		},
+    {
+      "path": "/Users/MacbookRetina/react-tutorial"
+    },
+    {
+      "path": "/Users/MacbookRetina/flux/examples"
+    }
+  ]
+}
