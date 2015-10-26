@@ -39,6 +39,7 @@
     "istanbul-react": "^1.0.1",
     "mocha": "^2.2.1",
     "mpromise": "^0.5.1",
+    "newrelic": "^1.22.2",
     "proxyquire": "^1.4.0",
     "react-tools": "^0.13.1",
     "sinon": "^1.14.1",

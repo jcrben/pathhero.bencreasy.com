@@ -1,5 +1,6 @@
 'use strict';
 
+require('newrelic');
 var app = require('express')();
 var middleware = require('./Server/src/middleware');
 
